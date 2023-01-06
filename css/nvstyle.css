@@ -1,0 +1,104 @@
+/*ESPACE MEMBRE*/
+
+	.info p span{
+		font-weight: bold;
+	}
+	.info p .sp{
+		font-weight: lighter;
+		padding-left: 30%;}
+
+	
+	
+	.fonctionuser{
+       
+
+  }
+.info{
+  background-color: #32CD32;
+  width: 80%;
+  height: 200px;
+  padding:10px;
+
+
+}
+.f{
+  font-weight: bold;
+  color: #fff;
+}
+  .f_user{
+    margin-top: 15px;
+    height: 100%;
+  width: 90%;
+  background-color: #fff;
+  margin-left: 15%;
+  margin-top: 5%;
+  
+   display: flex;
+  align-items: center;
+  justify-content: center;
+
+  }
+.info  table {
+
+border-collapse: collapse;
+width: 80%;
+}
+
+.info td {
+font-family: sans-serif;
+
+width: 90%;
+padding: 5px;
+text-align: center;
+
+}
+.info caption {
+font-family: sans-serif;
+text-decoration: underline;
+font-weight: bold;
+color: #fff;
+}
+.info button{
+    width:  140px;
+    height: 40px;
+    background-color:  #fff;
+
+
+}
+
+.fonctionuser button{
+    width:  140px;
+    height: 40px;
+    background-color:  #32CD32;
+
+
+}
+.fonctionuser{
+  
+  width: 80%;
+  height: 200px;
+  padding:100px;
+}
+/**/
+
+.m table {
+border: medium solid #6495ed;
+border-collapse: collapse;
+width: 50%;
+}
+.m th {
+font-family: monospace;
+border: thin solid #6495ed;
+width: 50%;
+padding: 5px;
+background-color: #D0E3FA;
+background-image: url(sky.jpg);
+}
+.m td {
+font-family: sans-serif;
+border: thin solid #6495ed;
+width: 50%;
+padding: 5px;
+text-align: center;
+background-color: #ffffff;
+}

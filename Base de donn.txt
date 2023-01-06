@@ -1,0 +1,48 @@
+
+USE `bd_breizhcoincoin`;
+DROP TABLE IF EXISTS`ANNONCE`;
+CREATE TABLE `ANNONCE` (
+  `idannonce` INT NOT NULL AUTO_INCREMENT,
+  `titreannonce` VARCHAR(42),
+  `texteannonce` VARCHAR(42),
+  `prix` DOUBLE,
+  `dateannonce` DATE,
+  `idcategorie`INT,
+  `user_id` INT,
+  PRIMARY KEY (`idannonce`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `CATEGORIE`;
+CREATE TABLE `CATEGORIE` (
+  `idcategorie`  INT NOT NULL AUTO_INCREMENT,
+  `nomcategorie` VARCHAR(42),
+  PRIMARY KEY (`idcategorie`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `;FAVORIS`;
+CREATE TABLE `FAVORIS` (
+  `idannonce` INT ,
+  `user_id` INT,
+  PRIMARY KEY (`idannonce`, `user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `UTILISATEUR`;
+CREATE TABLE `UTILISATEUR` (
+  `user_id`INT NOT NULL AUTO_INCREMENT ,
+  `nom` VARCHAR(42),
+  `prenoms` VARCHAR(42),
+  `mail` VARCHAR(42),
+  `mot_pass` VARCHAR(42),
+  `role` VARCHAR(42),
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ALTER TABLE `ANNONCE` ADD FOREIGN KEY (`user_id`) REFERENCES `UTILISATEUR` (`user_id`);
+ALTER TABLE `ANNONCE` ADD FOREIGN KEY (`idcategorie`) REFERENCES `CATEGORIE` (`idcategorie`);
+ALTER TABLE `FAVORIS` ADD FOREIGN KEY (`user_id`) REFERENCES `UTILISATEUR` (`user_id`);
+ALTER TABLE `FAVORIS` ADD FOREIGN KEY (`idannonce`) REFERENCES `ANNONCE` (`idannonce`);
+
+INSERT INTO `admin`(`matricule`, `motpass`) VALUES ('MABD','1234r');
+INSERT INTO `categorie`( `nomcategorie`) VALUES ('jeux'),('jouet'),('voiture'),('location'),('Livre'),('Bijoux');
+INSERT INTO `utilisateur`( `nom`, `prenoms`, `mail`, `mot_pass`) VALUES ('Tchimou','Alvine','tchimoualvine1122@gmail.com','sweetie1912'); 
+
